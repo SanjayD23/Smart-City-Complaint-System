@@ -1,4 +1,4 @@
-# 🏙️ Smart City Complaint Management System
+# Smart City Complaint Management System
 
 A full-stack web application for managing municipal complaints with role-based access control, real-time tracking, image uploads, and automated email notifications.
 
