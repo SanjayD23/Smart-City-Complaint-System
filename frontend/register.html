@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Smart City</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-brand">🏙️ Smart City</a>
+            <div class="navbar-menu">
+                <a href="login.html" class="navbar-link">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card fade-in" style="max-width: 600px; margin: 4rem auto;">
+            <h2 class="card-header text-center">Create Account</h2>
+
+            <div id="alert-container"></div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name</label>
+                    <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Minimum 6 characters" required
+                        minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="role">Register As</label>
+                    <select id="role" class="form-select" required>
+                        <option value="">Select Role</option>
+                        <option value="citizen">Citizen</option>
+                        <option value="officer">Department Officer</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                </div>
+
+                <div class="form-group hidden" id="department-group">
+                    <label class="form-label" for="department">Department</label>
+                    <select id="department" class="form-select">
+                        <option value="">Select Department</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+
+            <p class="text-center mt-3" style="color: var(--text-light);">
+                Already have an account? <a href="login.html"
+                    style="color: var(--primary); text-decoration: none; font-weight: 600;">Login here</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

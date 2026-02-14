@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Smart City</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="navbar-brand">🏙️ Smart City</a>
+            <div class="navbar-menu">
+                <span id="user-name" style="color: var(--text); font-weight: 600;"></span>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">Admin Dashboard</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="total-complaints">0</div>
+                <div class="stat-label">Total Complaints</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="stat-value" id="pending-complaints">0</div>
+                <div class="stat-label">Pending</div>
+            </div>
+            <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="stat-value" id="resolved-complaints">0</div>
+                <div class="stat-label">Resolved</div>
+            </div>
+        </div>
+
+        <div class="card fade-in">
+            <h2 class="card-header">📋 All Complaints</h2>
+            <div id="alert-container"></div>
+            <div id="complaints-list">
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <!-- Assignment Modal -->
+        <div id="assign-modal" class="hidden"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;">
+            <div class="card" style="max-width: 500px; margin: 0;">
+                <h3 class="card-header">Assign Complaint</h3>
+                <form id="assign-form">
+                    <div class="form-group">
+                        <label class="form-label" for="assign-department">Department</label>
+                        <select id="assign-department" class="form-select" required>
+                            <option value="">Select Department</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="assign-officer">Officer (Optional)</label>
+                        <select id="assign-officer" class="form-select">
+                            <option value="">Select Officer</option>
+                        </select>
+                    </div>
+
+                    <input type="hidden" id="assign-complaint-id">
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1;">Assign</button>
+                        <button type="button" onclick="closeAssignModal()" class="btn btn-secondary"
+                            style="flex: 1;">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
